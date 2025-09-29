@@ -46,6 +46,28 @@ If you prefer use project w/o docker launch:
 
 <code>php artisan db:seed</code>
 
+## Application Logic
+Located in the `app/Modules` folder.
+
+## Credit Rules
+All rules are stored in the `app/Modules/Credit/Domain/Rules` folder.  
+Each rule is a separate class that implements a common interface.  
+New rules can be easily added.
+
+All rules affect the `CreditDecision` DTO.
+
+By default, the `TestAssignmentRulesSet` is used.  
+Rules support sets (Rule Sets), and if necessary, a new handler can be created to work with a different set of rules.
+
+## Tests
+#### Unit
+Unit tests are provided for each existing rule and rule set.
+
+
+
+
+
+
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
