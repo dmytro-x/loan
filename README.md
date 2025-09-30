@@ -84,7 +84,9 @@ API endpoints tested.
 Notifier mocked in tests
 
 #### Tests launching
-`php artisan test`
+`php artisan test`  
+or  
+`docker compose exec app php artisan test`
 
 #### Static code analyse
 phpstan (larastan/larastan)
