@@ -24,7 +24,7 @@ copy .env
 
 <code>docker compose exec app composer install</code>
 
-<code>docker compose exec app php artisan key:generate</code>
+<code>docker compose exec app php artisan key:generate</code>  
 <code>docker compose exec app php artisan key:generate --env=testing</code>
 
 <code>docker compose exec app php artisan migrate</code>
