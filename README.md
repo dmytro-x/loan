@@ -46,8 +46,22 @@ If you prefer use project w/o docker launch:
 
 <code>php artisan db:seed</code>
 
+## API Endpoints
+- `GET /clients/{id}` → `ClientController@show`
+- `POST /clients` → `ClientController@store`
+- `POST /credits/check` → `CreditCheckController`
+- `POST /credits` → `CreditIssueController`
+
+## Routes file
+
 ## Application Logic
 Located in the `app/Modules` folder.
+
+## Identifiers
+Client and Credit IDs are **ULID**:
+- Fast to search and easy to generate on the fly.
+- The probability of collisions is negligible.
+- Possible errors are caught and saved to the log. 
 
 ## Credit Rules
 All rules are stored in the `app/Modules/Credit/Domain/Rules` folder.  
@@ -59,9 +73,24 @@ All rules affect the `CreditDecision` DTO.
 By default, the `TestAssignmentRulesSet` is used.  
 Rules support sets (Rule Sets), and if necessary, a new handler can be created to work with a different set of rules.
 
+## Pin
+pin as sensitive data ecripted in database
+
 ## Tests
 #### Unit
 Unit tests are provided for each existing rule and rule set.
+
+#### Feature
+Launched in the testing environment with an SQLite database.  
+API endpoints tested.
+
+Notifier mocked in tests
+
+#### Tests launching
+`php artisan test`
+
+#### Static code analyse
+phpstan (larastan/larastan)
 
 
 
