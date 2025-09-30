@@ -27,7 +27,7 @@ copy .env
 <code>docker compose exec app php artisan key:generate</code>
 <code>docker compose exec app php artisan key:generate --env=testing</code>
 
-<code>docker compose exec app php artisan migrate --seed</code>
+<code>docker compose exec app php artisan migrate</code>
 
 #### App → http://localhost:8098
 #### PhpMyAdmin → http://localhost:8089 (user: laravel, password: secret)
@@ -44,8 +44,6 @@ If you prefer use project w/o docker launch:
 
 <code>php artisan migrate</code>
 
-<code>php artisan db:seed</code>
-
 ## API Endpoints
 - `GET /clients/{id}` → `ClientController@show`
 - `POST /clients` → `ClientController@store`
@@ -53,6 +51,7 @@ If you prefer use project w/o docker launch:
 - `POST /credits` → `CreditIssueController`
 
 ## Routes file
+`routes/api.php`
 
 ## Application Logic
 Located in the `app/Modules` folder.
