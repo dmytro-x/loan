@@ -10,17 +10,16 @@ class EloquentCreditModel extends Model
     protected $table = 'credits';
 
     protected $fillable = [
-        'id','client_id','name','amount','rate','start_date','end_date',
+        'id','client_id','name','amount','rate','start_date','end_date', 'is_approved', 'rejection_reasons',
     ];
 
     public $incrementing = false;
     protected $keyType = 'string';
 
     protected $casts = [
-        'amount' => 'decimal:2',
-        'rate' => 'decimal:2',
         'start_date' => 'date',
         'end_date' => 'date',
+        'rejection_reasons' => 'array',
     ];
 
     protected static function booted()

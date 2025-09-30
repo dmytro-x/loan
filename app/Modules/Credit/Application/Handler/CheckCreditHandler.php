@@ -19,13 +19,13 @@ final class CheckCreditHandler
     {
         $client = $this->clients->findById($command->clientId);
 
-        $applicationData = new CreditApplicationData(
-            $command->name,
-            $command->amount,
-            $command->rate,
-            $command->startDate,
-            $command->endDate
-        );
+        $applicationData = CreditApplicationData::fromArray([
+            'name'       => $command->name,
+            'amount'     => $command->amount,
+            'rate'       => $command->rate,
+            'start_date' => $command->startDate,
+            'end_date'   => $command->endDate,
+        ]);
 
         return $this->rulesSet->validate($client, $applicationData);
     }

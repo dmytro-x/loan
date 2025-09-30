@@ -9,8 +9,10 @@ final class Credit
         public string $clientId,
         public string $name,
         public string $amount,
-        public string $rate,
+        public string|float $rate,
         public \DateTimeImmutable $startDate,
         public \DateTimeImmutable $endDate,
+        public $isApproved,
+        public $rejectionReasons,
     ) {}
 }
