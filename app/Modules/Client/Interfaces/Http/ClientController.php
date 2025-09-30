@@ -20,9 +20,9 @@ class ClientController extends Controller
             'region' => 'required|string',
             'income' => 'required|numeric|min:0',
             'score'  => 'required|integer|min:0',
-            'pin'    => 'nullable|string',
-            'email'  => 'nullable|email',
-            'phone'  => 'nullable|string',
+            'pin'    => 'required|string',
+            'email'  => 'required|email',
+            'phone'  => 'required|string',
         ]);
 
         $payload = array_merge(
