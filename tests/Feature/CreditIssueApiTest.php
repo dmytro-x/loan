@@ -47,6 +47,10 @@ class CreditIssueApiTest extends TestCase
             'endDate'   => now()->addYear()->toDateString(),
         ];
 
+        $this->mock(\App\Modules\Notification\Domain\Service\Notifier::class)
+            ->shouldReceive('notify')
+            ->once();
+
         $response = $this->postJson(route('credits.issue'), $payload);
 
         $response->assertStatus(Response::HTTP_CREATED)
@@ -89,6 +93,10 @@ class CreditIssueApiTest extends TestCase
             'startDate' => now()->toDateString(),
             'endDate'   => now()->addYear()->toDateString(),
         ];
+
+        $this->mock(\App\Modules\Notification\Domain\Service\Notifier::class)
+            ->shouldReceive('notify')
+            ->once();
 
         $response = $this->postJson(route('credits.issue'), $payload);
 
