@@ -63,14 +63,12 @@ Client and Credit IDs are **ULID**:
 - Possible errors are caught and saved to the log. 
 
 ## Credit Rules
-All rules are stored in the `app/Modules/Credit/Domain/Rules` folder.  
-Each rule is a separate class that implements a common interface.  
-New rules can be easily added.
-
-All rules affect the `CreditDecision` DTO.
-
-By default, the `TestAssignmentRulesSet` is used.  
-Rules support sets (Rule Sets), and if necessary, a new handler can be created to work with a different set of rules.
+- All rules are stored in the `app/Modules/Credit/Domain/Rules` folder.  
+- Each rule is a separate class that implements a common interface.  
+- New rules can be easily added.
+- All rules affect the `CreditDecision` DTO.
+- By default, the `TestAssignmentRulesSet` is used.  
+- Rules support sets (Rule Sets), and if necessary, a new handler can be created to work with a different set of rules.
 
 ## Pin
 pin as sensitive data ecripted in database
